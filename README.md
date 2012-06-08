@@ -1,4 +1,5 @@
-rspec-tut
-=========
+# Ruby on Rails Tutorial: Chapter 3 and Above
 
-Hartl's RoR3 Tutorials - sample app with Rspec test framework
+This is the sample application for
+[*Ruby on Rails Tutorial: Learn Rails by Example*](http://railstutorial.org/)
+by [Michael Hartl](http://michaelhartl.com/).

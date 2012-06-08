@@ -2,37 +2,33 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.5'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'pg'
-
-
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
-  gem 'uglifier', '>= 1.0.3'
+# Development + Test setup
+group :development, :test do
+  # pg-mingw32 gem
+  gem 'pg', :platforms => :mingw
 end
 
-gem 'jquery-rails'
+# Heroku:
+group :production do
+  gem 'pg'
+end
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+# Test framework on various environments
+group :development do
+  gem 'rspec-rails', '~> 2.10.1'
+  gem 'annotate', '~> 2.4.0'
+  gem 'faker', '~> 1.0.1'
+end
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
+group :test do
+  gem 'rspec', '~> 2.10.0'
+  gem 'webrat', '~> 0.7.3'
+  gem 'spork', '~>0.9.2'
+  gem 'factory_girl_rails', '~> 3.3.0'
+end
 
-# Use unicorn as the app server
-# gem 'unicorn'
+# Gravatar image tag
+gem 'gravatar_image_tag', '~> 1.1.2'
 
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
+# For paginated queries with ActiveRecord
+gem 'will_paginate', '~> 3.0.3'
