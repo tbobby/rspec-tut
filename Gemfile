@@ -32,3 +32,5 @@ gem 'gravatar_image_tag', '~> 1.1.2'
 
 # For paginated queries with ActiveRecord
 gem 'will_paginate', '~> 3.0.3'
+
+gem 'jquery-rails'
