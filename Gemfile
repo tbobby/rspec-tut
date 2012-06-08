@@ -6,6 +6,7 @@ gem 'rails', '3.2.5'
 group :development, :test do
   # pg-mingw32 gem
   gem 'pg', :platforms => :mingw
+  gem 'win32console', :platforms => :mingw
 end
 
 # Heroku:
