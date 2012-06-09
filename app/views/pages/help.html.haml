@@ -1,0 +1,7 @@
+%h1= @title
+%p
+  Get help at the 
+  = link_to @rorhelp, $ROR_LNK
+  To get help on this sample app, see the 
+  = succeed '.' do 
+    = link_to "Rails Tutorial book", $ROR_LNK + "book"

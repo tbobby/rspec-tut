@@ -1,5 +1,7 @@
 
 class PagesController < ApplicationController
+  $ROR_STR = "Ruby on Rails Tutorial"
+  $ROR_LNK = "http://railstutorial.org/"
   def home
     @title = "Home"
   end
@@ -14,5 +16,6 @@ class PagesController < ApplicationController
   
   def help
     @title = "Help"
+    @rorhelp = $ROR_STR + " help page"
   end
 end
