@@ -23,7 +23,7 @@ end
 group :test do
   gem 'rspec', '~> 2.10.0'
   gem 'webrat', '~> 0.7.3'
-  gem 'spork-rails', '~> 3.2.0'
+  gem 'spork', '~> 0.9.2'
   gem 'factory_girl_rails', '~> 3.3.0'
 end
 

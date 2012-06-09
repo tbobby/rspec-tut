@@ -1,5 +1,4 @@
 # `spork --bootstrap`
-require 'rubygems'
 require 'spork'
 #uncomment the following line to use spork with the debugger
 #require 'spork/ext/ruby-debug'
@@ -22,6 +21,7 @@ Spork.prefork do
     require File.dirname(__FILE__) + '/../config/environment.rb'
   end
 
+  counter = -1
   RSpec.configure do |config|
     # ## Mock Framework
     #
@@ -33,7 +33,7 @@ Spork.prefork do
     config.mock_with :rspec
 
     # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
-    # config.fixture_path = "#{::Rails.root}/spec/fixtures"
+    config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
     # If you're not using ActiveRecord, or you'd prefer not to run each of your
     # examples within a transaction, remove the following line or assign false
@@ -44,6 +44,21 @@ Spork.prefork do
     # automatically. This will be the default behavior in future versions of
     # rspec-rails.
     config.infer_base_class_for_anonymous_controllers = false
+    
+    # Disables GC in general, and forces a run after every 10th test
+    config.after(:each) do
+      counter += 1
+      if counter > 9
+        GC.enable
+        GC.start
+        GC.disable
+        counter = 0
+      end
+    end
+
+    config.after(:suite) do
+      counter = 0
+    end
     
     ### Part of a Spork hack. See Rspec-core Issue#62 (closed)
     # Emulate initializer set_clear_dependencies_hook in
