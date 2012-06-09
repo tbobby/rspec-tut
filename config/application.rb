@@ -66,6 +66,8 @@ module RspecTut
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
     
+    # config.sass.preferred_syntax = :sass
+    
     ### Part of a Spork hack. Rspec-core Issue#62 (closed)
     if Rails.env.test?
       initializer :after => :initialize_dependency_mechanism do
