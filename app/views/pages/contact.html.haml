@@ -1,4 +1,5 @@
 %h1= @title
 %p
   Contact #{$ROR_STR} about the sample app at the 
-  = link_to "feedback page", $ROR_LNK + "feedback"
+  = succeed '.' do
+    = link_to "feedback page", $ROR_LNK + "feedback"
