@@ -34,4 +34,8 @@ RspecTut::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  
+  # Local precompilation of assets, enable viewing local changes without 
+  # recompiling assets again
+  config.assets.prefix = "/dev-assets"
 end
