@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source :rubygems
 
 gem 'rails', '3.2.5'
 gem 'haml', '~> 3.1.6'
@@ -42,7 +42,10 @@ gem 'nokogiri', '~> 1.5.3'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.5'
+  gem 'sass-rails', 
+  :git => "https://github.com/rails/sass-rails.git", 
+  :branch => "3-2-stable" # fixes sass-rails not honoring assets.css_compressor
+  
   gem 'compass-rails', '~> 1.0.2'
   gem 'susy', '~> 1.0.rc.1'
   # gem 'coffee-rails', '~> 3.2.1'
