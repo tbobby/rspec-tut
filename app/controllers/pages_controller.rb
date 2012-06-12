@@ -1,7 +1,9 @@
 
 class PagesController < ApplicationController
-  $ROR_STR = "Ruby on Rails Tutorial"
-  $ROR_LNK = "http://railstutorial.org/"
+  $ROR_TUT = {:str => "Ruby on Rails Tutorial", 
+    :link => "http://railstutorial.org",
+    :ror => "Ruby on Rails",
+    :rorlink => "http://rubyonrails.org"}
   def home
     @title = "Home"
   end
@@ -16,6 +18,5 @@ class PagesController < ApplicationController
   
   def help
     @title = "Help"
-    @rorhelp = $ROR_STR + " help page"
   end
 end

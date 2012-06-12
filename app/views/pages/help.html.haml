@@ -1,7 +1,8 @@
 %h1= @title
 %p
   Get help at the 
-  = link_to @rorhelp, $ROR_LNK
+  = succeed '.' do
+    %a{:href => $ROR_TUT[:link]} #{$ROR_TUT[:str]} help page
   To get help on this sample app, see the 
-  = succeed '.' do 
-    = link_to "Rails Tutorial book", $ROR_LNK + "book"
+  = succeed '.' do
+    %a{:href => "#{$ROR_TUT[:link]}/book"} Rails Tutorial book

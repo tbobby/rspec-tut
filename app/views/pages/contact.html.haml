@@ -1,5 +1,5 @@
 %h1= @title
 %p
-  Contact #{$ROR_STR} about the sample app at the 
+  Contact #{$ROR_TUT[:str]} about the sample app at the 
   = succeed '.' do
-    = link_to "feedback page", $ROR_LNK + "feedback"
+    %a{:href => $ROR_TUT[:link]} feedback page
