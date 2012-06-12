@@ -1,9 +1,7 @@
 %h1= @title
 %p
-  -# = link_to $ROR_STR, $ROR_LNK
   %a{:href => $ROR_TUT[:link]} #{$ROR_TUT[:str]}
   is a project to make a book and screencasts to teach web development with
   = succeed '.' do
-    -# = link_to "Ruby on Rails", "http://rubyonrails.org"
     %a{:href => $ROR_TUT[:rorlink]} #{$ROR_TUT[:ror]}
   This is the sample application for the tutorial.
