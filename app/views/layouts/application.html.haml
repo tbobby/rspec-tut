@@ -3,5 +3,21 @@
   %head
     %title= title
     = csrf_meta_tag
+    /[if lt IE 9]
+      %script{:src => "http://html5shiv.googlecode.com/svn/trunk/html5.js"}
+    %link{:rel => "stylesheet",
+      :type => "text/css",
+      :href => stylesheet_path("screen.css"),
+      :media => "screen, projection"}
   %body
-    = yield
+    .container
+      %header
+        %img.round{:src => image_path("RT.png"),
+          :alt => "Sample App"}
+      %section.round
+        = yield
+        
+      %footer
+        %small 
+          &copy;Copyright Robert Tanaman #{Time.now.year}.
+          All Rights Reserved.

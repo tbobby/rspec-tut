@@ -3,6 +3,7 @@ source :rubygems
 gem 'rails', '3.2.5'
 gem 'haml', '~> 3.1.6'
 gem 'haml-rails', '~> 0.3.4'
+gem 'maruku', '~> 0.6.0'
 
 # Development + Test setup
 group :development, :test do

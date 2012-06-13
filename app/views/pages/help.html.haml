@@ -1,8 +1,6 @@
 %h1= @title
 %p
-  Get help at the 
-  = succeed '.' do
-    %a{:href => $ROR_TUT[:link]} #{$ROR_TUT[:str]} help page
-  To get help on this sample app, see the 
-  = succeed '.' do
-    %a{:href => "#{$ROR_TUT[:link]}/book"} Rails Tutorial book
+  :maruku
+    Get help at the [#{$ROR_TUT[:str]} help page](#{$ROR_TUT[:link]}). 
+    To get help on this sample app, see the 
+    [Rails Tutorial book](#{$ROR_TUT[:link]}/book).

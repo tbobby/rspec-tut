@@ -1,7 +1,7 @@
 %h1= @title
 %p
-  %a{:href => $ROR_TUT[:link]} #{$ROR_TUT[:str]}
-  is a project to make a book and screencasts to teach web development with
-  = succeed '.' do
-    %a{:href => $ROR_TUT[:rorlink]} #{$ROR_TUT[:ror]}
-  This is the sample application for the tutorial.
+  :maruku
+    [#{$ROR_TUT[:str]}](#{$ROR_TUT[:link]}) is a project to make a book and
+    screencasts to teach web development with
+    [#{$ROR_TUT[:ror]}](#{$ROR_TUT[:rorlink]}). This is the sample application
+    for the tutorial.
