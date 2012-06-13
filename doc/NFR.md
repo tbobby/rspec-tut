@@ -1,5 +1,9 @@
 # The Quality Attributes
 - - -
+### Responsiveness
+A responsive web design adapts to requests based on device detection.
+A web display should be fluid on a tablet, desktop, mobile, or TV.
+
 ### Performance
 For a fast loading webapp, consider these:
 
