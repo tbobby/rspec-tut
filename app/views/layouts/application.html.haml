@@ -13,21 +13,10 @@
       :type => "text/css",
       :href => stylesheet_path("application.css")}
   %body
-    .container
-      /TODO: separate each part into partial haml+sass
-      %header
-        %img.round{:src => image_path("RT.png"),
-          :alt => "Sample App"}
-        %nav.round-edge
-          %ul.nav
-            %li= link_to "Home", '#'
-            %li= link_to "About", '#'
-            %li= link_to "Help", '#'
-            %li= link_to "Contact", '#'
-         
-      %section.round-edge
+    #page
+      = render "header"
+      
+      #main
         = yield
-      %footer
-        %small 
-          Copyright&copy; RT #{Time.now.year}.
-          All Rights Reserved.
+        
+      = render "footer"

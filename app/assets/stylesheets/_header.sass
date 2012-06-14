@@ -1,0 +1,44 @@
+// ------------------
+// Header
+ 
+= hide-text
+  text-indent: 100%
+  white-space: nowrap
+  overflow: hidden
+ 
+#header
+  margin: 0 auto
+  
+  h1
+    +hide-text
+    float: left
+    margin: 9px 0 0 9px
+    
+    a
+      +border-radius(38px)
+      display: block
+      width: 75px
+      height: 76px
+      background: url(RT.png) no-repeat
+  
+  #nav
+    position: relative
+    float: right
+    padding: 9px 0
+    ul
+      +horizontal-list(false)
+      
+      li
+        +border-corner-radius(top, left, 9px)
+        +border-corner-radius(bottom, right, 9px)
+        padding: 6px 15px
+        margin: 0 7.5px
+        border: 1px solid #cacaca
+        border-bottom: 3px solid $main-color
+        
+        a
+          text-decoration: none
+          color: $main-color / 4
+          
+          &:hover
+            color: $main-color

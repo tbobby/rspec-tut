@@ -1,42 +1,70 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
- *
- *= require_self
- *= require_tree .
+ * Master stylesheet.
+ * @author RT
  */
 @import compass/reset
 @import compass/utilities
 @import compass/css3/border-radius
+@import compass/css3/inline-block
 @import compass/typography/lists/horizontal-list
+@import compass/typography/links/link-colors
 
 @import fonts
 @import vars
+@import header
+@import footer
+
+= button
+  +border-corner-radius(top, left, 9px)
+  +border-corner-radius(bottom, right, 9px)
+  padding: 6px 15px
+  margin: 0 7.5px
+  border: 1px solid #cacaca
+  border-bottom: 3px solid $main-color
 
 html, body
   +serif
   font-size: $base-font-size
   border-top: 3px solid #{$main-color}
+
+a
+  text-decoration: none
+  +link-colors($lnk-normal, $lnk-hover, $lnk-active, $lnk-visited, $lnk-focus)
   
+p
+  margin-bottom: 18px  
+
+// h1-h6 headings  
 @for $i from 1 through 6
   h#{$i}
-    +font-scale(pow($phi, 2/$i))
+    +font-scale(pow($phi, $phi/$i))
     font-weight: bold
 
-ul.nav
-  +horizontal-list(9px)
+/* page container
+ * ---------------- */
+#page
+  margin: 0 auto
+  padding: 0 30px
   
-.round
-  +border-radius(99px)
+a img
+  border: none
+  
+.clear
+  clear: both
 
-.round-edge
-  +border-radius(9px)
-    
-small
-  font-size: $base-font-size/$phi
+/* main content
+ * ---------------- */
+#main
+  margin: 0 auto
+  position: relative
+  clear: both
+  padding-top: 9px
+  &:after
+    clear: both
+    display: block
+    content: ""
+  h1
+    margin-bottom: 9px
+  
+/* misc
+ * ---------------- */
