@@ -11,3 +11,32 @@
  *= require_self
  *= require_tree .
  */
+@import compass/reset
+@import compass/utilities
+@import compass/css3/border-radius
+@import compass/typography/lists/horizontal-list
+
+@import fonts
+@import vars
+
+html, body
+  +serif
+  font-size: $base-font-size
+  border-top: 3px solid #{$main-color}
+  
+@for $i from 1 through 6
+  h#{$i}
+    +font-scale(pow($phi, 2/$i))
+    font-weight: bold
+
+ul.nav
+  +horizontal-list(9px)
+  
+.round
+  +border-radius(99px)
+
+.round-edge
+  +border-radius(9px)
+    
+small
+  font-size: $base-font-size/$phi

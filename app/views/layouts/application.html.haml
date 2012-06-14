@@ -1,5 +1,5 @@
 !!!
-%html
+%html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "en"}
   %head
     %title= title
     = csrf_meta_tag
@@ -9,15 +9,25 @@
       :type => "text/css",
       :href => stylesheet_path("screen.css"),
       :media => "screen, projection"}
+    %link{:rel => "stylesheet",
+      :type => "text/css",
+      :href => stylesheet_path("application.css")}
   %body
     .container
+      /TODO: separate each part into partial haml+sass
       %header
         %img.round{:src => image_path("RT.png"),
           :alt => "Sample App"}
-      %section.round
+        %nav.round-edge
+          %ul.nav
+            %li= link_to "Home", '#'
+            %li= link_to "About", '#'
+            %li= link_to "Help", '#'
+            %li= link_to "Contact", '#'
+         
+      %section.round-edge
         = yield
-        
       %footer
         %small 
-          &copy;Copyright Robert Tanaman #{Time.now.year}.
+          Copyright&copy; RT #{Time.now.year}.
           All Rights Reserved.
