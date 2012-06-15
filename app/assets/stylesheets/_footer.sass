@@ -2,10 +2,34 @@
 // Footer
 
 #footer
-  padding-top: 10px
-  padding-bottom: 3px
-  font-size: $base-font-size/$phi
-  font-style: italic
-  clear: both
-  text-align: center
-  border-bottom: $border
+  +zero-margin
+  #nav
+    +border-radius($px9/3)
+    margin: $px9 0
+    background-color: $main-color
+    position: relative
+    float: right
+    padding: 1px 0px
+    ul  
+      +horizontal-list(false)
+      
+      li
+        +zero-margin
+        padding: $px9/3 $px9
+        background-color: white
+        
+        a
+          text-decoration: none
+          color: $main-color / 4
+          
+          &:hover
+            color: $main-color
+  
+  small
+    display: block
+    padding: $px9/3 0
+    font-size: $base-font-size/$phi
+    font-style: italic
+    clear: both
+    text-align: right
+    border-bottom: $border

@@ -13,10 +13,8 @@
       :type => "text/css",
       :href => stylesheet_path("application.css")}
   %body
-    #page
+    #page.container
       = render "header"
-      
       #main
         = yield
-        
       = render "footer"

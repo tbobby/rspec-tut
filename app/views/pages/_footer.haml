@@ -2,4 +2,11 @@
 // Footer
 
 #footer 
-  RT &copy #{Time.now.year}. All Rights Reserved.
+  #nav
+    %ul
+      %li= link_to "About", '#'
+      %li= link_to "Contact", '#'
+      %li= link_to "News", "http://railstutorial.org/"
+      %li= link_to "Rails Tutorial", "http://railstutorial.org/"
+      
+  %small RT &copy #{Time.now.year}. All Rights Reserved.

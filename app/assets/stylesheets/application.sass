@@ -9,30 +9,26 @@
 @import compass/typography/lists/horizontal-list
 @import compass/typography/links/link-colors
 
+@import mixins
 @import fonts
 @import vars
 @import header
 @import footer
 
-= button
-  +border-corner-radius(top, left, 9px)
-  +border-corner-radius(bottom, right, 9px)
-  padding: 6px 15px
-  margin: 0 7.5px
-  border: 1px solid #cacaca
-  border-bottom: 3px solid $main-color
-
 html, body
   +serif
   font-size: $base-font-size
-  border-top: 3px solid #{$main-color}
+  border-top: $px9/3 solid #{$main-color}
 
 a
   text-decoration: none
   +link-colors($lnk-normal, $lnk-hover, $lnk-active, $lnk-visited, $lnk-focus)
   
+  &:hover
+    text-decoration: underline
+  
 p
-  margin-bottom: 18px  
+  margin: $px9
 
 // h1-h6 headings  
 @for $i from 1 through 6
@@ -43,8 +39,8 @@ p
 /* page container
  * ---------------- */
 #page
-  margin: 0 auto
-  padding: 0 30px
+  +zero-margin
+  padding: 0 ($px9/3*10)
   
 a img
   border: none
@@ -55,16 +51,33 @@ a img
 /* main content
  * ---------------- */
 #main
-  margin: 0 auto
+  +zero-margin
   position: relative
   clear: both
-  padding-top: 9px
+  padding-top: $px9
   &:after
     clear: both
     display: block
     content: ""
   h1
-    margin-bottom: 9px
+    margin: $px9
+    text-align: left
   
-/* misc
+/* signup
  * ---------------- */
+a.button
+  +border-radius($px9)
+  margin-top: $px9*2
+  margin-bottom: $px9
+  margin-left: auto
+  margin-right: $px9
+  display: block
+  text-align: center
+  width: $px9*8
+  background: $main-color
+  font-size: 127.2%
+  padding: $px9 ($px9*2)
+  color: silver
+  &:hover
+    text-decoration: none
+    color: black
