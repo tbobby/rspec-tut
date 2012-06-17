@@ -56,4 +56,5 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
   gem 'yui-compressor', '~> 0.9.6'
+  gem 'font-awesome-sass-rails', '~> 2.0.0.0'
 end
