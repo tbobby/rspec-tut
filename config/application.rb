@@ -11,7 +11,7 @@ require "rails/all"
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
-  Bundler.require(*Rails.groups(:assets => %w(development test)))
+  Bundler.require(*Rails.groups(:assets => %w(development test))) if defined?(Bundler)
   # If you want your assets lazily compiled in production, use this line
   # Bundler.require(:default, :assets, Rails.env)
 end
@@ -63,6 +63,9 @@ module RspecTut
     # Enable the asset pipeline
     config.assets.enabled = true
     config.assets.css_compressor = :yui
+    
+    # Precompile *all* assets, except those that start with underscore
+    config.assets.precompile << /(^[^_\/]|\/[^_])[^\/]*$/
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
@@ -70,7 +73,10 @@ module RspecTut
     # Local precompilation of assets
     config.assets.initialize_on_precompile = false
     
-    # config.sass.preferred_syntax = :sass
+    config.sass.preferred_syntax = :sass
+    
+    # Using compass-extension susy
+    #config.compass.require "susy"
     
     ### Part of a Spork hack. Rspec-core Issue#62 (closed)
     if Rails.env.test?

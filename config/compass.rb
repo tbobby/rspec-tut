@@ -1,5 +1,4 @@
 # Require any additional compass plugins here.
-require 'modular-scale'
 project_type = :rails
 
 # To reduce CSS output

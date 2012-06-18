@@ -46,7 +46,7 @@ group :assets do
   gem 'sass-rails', 
   :git => "https://github.com/rails/sass-rails.git", 
   :branch => "3-2-stable" # fixes sass-rails not honoring assets.css_compressor
-  
+
   gem 'compass-rails', '~> 1.0.2'
   gem 'susy', '~> 1.0.rc.1'
   # gem 'coffee-rails', '~> 3.2.1'
