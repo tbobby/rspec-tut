@@ -1,17 +1,6 @@
 !!!
 %html{:xmlns => "http://www.w3.org/1999/xhtml", "xml:lang" => "en"}
-  %head
-    %title= title
-    = csrf_meta_tag
-    /[if lt IE 9]
-      %script{:src => "http://html5shiv.googlecode.com/svn/trunk/html5.js"}
-    %link{:rel => "stylesheet",
-      :type => "text/css",
-      :href => stylesheet_path("screen.css"),
-      :media => "screen, projection"}
-    %link{:rel => "stylesheet",
-      :type => "text/css",
-      :href => stylesheet_path("application.css")}
+  = render "head"
   %body
     #page.container
       = render "header"

@@ -19,15 +19,17 @@
  *    Email: dave@davegandy.com
  *    Twitter: http://twitter.com/fortaweso_me
  *    Work: Lead Product Designer @ http://kyruus.com
+ */
 
 @import compass/css3/font-face
 
-$fontAwesomePath: "../fonts/fontawesome-webfont" !default
+$fontAwesomePath: "../../fonts/fontawesome-webfont" !default
 
-+font-face("FontAwesome", font-files("#{$fontAwesomePath}.woff", woff, "#{$fontAwesomePath}.ttf", truetype, "#{$fontAwesomePath}.svg#FontAwesomeRegular", svg), "#{$fontAwesomePath}.eot", normal, normal)
++font-face("FontAwesome", font-files("#{$fontAwesomePath}.woff", woff,     "#{$fontAwesomePath}.ttf", truetype, "#{$fontAwesomePath}.svg#FontAwesomeRegular", svg), "#{$fontAwesomePath}.eot", normal, normal)
 
 /*  Font Awesome styles
  *  -------------------------------------------------------
+ */
 
 [class^="icon-"]:before,
 [class*=" icon-"]:before
@@ -42,7 +44,7 @@ a [class*=" icon-"]
   display: inline-block
   text-decoration: inherit
 
-/* makes the font 33% larger relative to the icon container
+// makes the font 33% larger relative to the icon container */
 .icon-large:before
   vertical-align: middle
   font-size: 4 / 3em
@@ -50,7 +52,7 @@ a [class*=" icon-"]
 .btn, .nav-tabs
   [class^="icon-"],
   [class*=" icon-"]
-    /* keeps button heights with and without icons the same
+    // keeps button heights with and without icons the same
     line-height: .9em
 
 li
@@ -61,7 +63,7 @@ li
     text-align: center
   .icon-large:before,
   .icon-large:before
-    /* 1.5 increased font size for icon-large * 1.25 width
+    // 1.5 increased font size for icon-large * 1.25 width
     width: 1.5 * 1.25em
 
 ul.icons
@@ -74,12 +76,13 @@ ul.icons
       width: .8em
     .icon-large:before,
     .icon-large:before
-      /* 1.5 increased font size for icon-large * 1.25 width
+      // 1.5 increased font size for icon-large * 1.25 width
       vertical-align: initial
-      //      width: 1.5*1.25em;
+      width: 1.5*1.25em
 
 /*  Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
  *  readers do not read off random characters that represent icons
+ */
 .icon-glass:before
   content: "\f000"
 
@@ -170,7 +173,7 @@ ul.icons
 .icon-repeat:before
   content: "\f01e"
 
-/* \f020 doesn't work in Safari. all shifted one down
+// \f020 doesn't work in Safari. all shifted one down
 .icon-refresh:before
   content: "\f021"
 

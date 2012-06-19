@@ -1,0 +1,31 @@
+// ---------------------------------------------------------------------------
+// Default sizes, and size mixins
+
+$base-font-size: $normpx
+$base-line-height: $medpx
+
+$round-to-nearest-half-line: true
+
+// ---------------------------------------------------------------------------
+// Type Mixins
+
+= font-scale($factor: 1, $vscale: 1)
+  font-size: $base-font-size * $factor
+  line-height: $base-line-height * $vscale
+  
+= adjust-font-size-em($em: 1em)
+  font-size: $em
+  
+= adjust-line-height($em: 1em)
+  line-height: $em
+  
+= adjust-font-size-pct($pct: 100%)
+  font-size: $pct
+  
+= ellipsis($r: 1)
+  overflow: hidden
+  max-height: rhythm($r)
+  white-space: nowrap
+  word-wrap: break-word
+  -o-text-overflow: ellipsis
+  text-overflow: ellipsis

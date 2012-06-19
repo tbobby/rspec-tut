@@ -3,6 +3,7 @@ _(that may never be entirely checked off)_
 
 
 ## PRESENTATION LAYER
+To achieve responsive layout based on media (device), consider these:
 
 ### PL01. Grid Layout
 
@@ -17,7 +18,18 @@ sizes, types, fonts, colors, and grid settings.
 
 ### PL03. Typography
 
-* [ ] TP01. Integrate Font-Awesome into project to use the icons collection.
+* [ ] TP01. Use dynamic font size (based on media) to increase responsiveness.
+
+* [ ] TP02. Integrate Font-Awesome into project to use the icons collection.
+
+
+## MAINTENANCE
+
+* [ ] D-R-Y out the code, refactor early and often.
+
+* [ ] Meaningful git comments to improve traceability.
+
+* [ ] Helpful inline code comments to improve code readability.
 
 
 ## TESTING & DEBUGGING

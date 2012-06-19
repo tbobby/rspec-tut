@@ -1,0 +1,66 @@
+//-----------------------------------------------------------------------------
+// GUIDELINES
+// . use of absolute px value for applicable attributes is not recommended
+// . use of 'em' or % to specify font-size, based on user/browser default size
+
+//-----------------------------------------------------------------------------
+// Imports
+
+@import compass/reset
+@import compass/typography/vertical_rhythm
+@import compass/css3/text-shadow
+
+@import font-awesome
+@import fonts
+
+//-----------------------------------------------------------------------------
+// Variables
+
+$link: '&:link, &:visited'
+$focus: '&:focus, &:active, &:hover'
+
+$border: 1px dashed $ruby
+
+//-----------------------------------------------------------------------------
+// Root
+
++establish-baseline
+html, body
+  +serif
+  +text-shadow(rgba(white,.5) 0 $picoem 0)
+  
+  // http://www.alistapart.com/articles/howtosizetextincss/
+  +adjust-font-size-pct(100%)
+  +adjust-line-height($medem)
+  
+  color: $susy-bodycopy
+  background: $susy-background-light-20
+  border-top: $microem solid #{$base011}
+  
+b, i
+  font-weight: normal
+  font-style: normal
+
+.caps
+  +caps
+  
+a
+  #{$link}
+    color: $susy-highlight
+    text-decoration: none
+    
+  #{$focus}
+    color: $accent
+  
+  &:hover
+    border-bottom: 1px solid $accent
+    padding-bottom: $picoem
+    
+//-----------------------------------------------------------------------------
+// Simple Pages
+
+%simple
+  [role="main"]
+    @extend %type
+    +at-breakpoint($break)
+      +pad(1,1)

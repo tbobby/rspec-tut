@@ -2,7 +2,23 @@
  * Master stylesheet.
  * @author RT
  */
-@import compass/reset
+ 
+// -------------------------------------------------------------------------
+// Base
+@import _base/base
+
+// -------------------------------------------------------------------------
+// General
+@import _general/root
+@import _general/type
+
+// -------------------------------------------------------------------------
+// Layout
+//@import layout
+
+// -------------------------------------------------------------------------
+// Modules
+
 @import compass/utilities
 @import compass/css3/border-radius
 @import compass/css3/inline-block
@@ -10,37 +26,24 @@
 @import compass/typography/links/link-colors
 
 @import mixins
-@import fonts
-@import vars
 @import header
 @import footer
-
-html, body
-  +serif
-  font-size: $base-font-size
-  border-top: $px9/3 solid #{$main-color}
-
-a
-  text-decoration: none
-  +link-colors($lnk-normal, $lnk-hover, $lnk-active, $lnk-visited, $lnk-focus)
   
-  &:hover
-    text-decoration: underline
-  
+// -------------------------------------------------------------------------
+// Main tags
 p
   margin: $px9
-
-// h1-h6 headings  
-@for $i from 1 through 6
-  h#{$i}
-    +font-scale(pow($phi, $phi/$i))
-    font-weight: bold
+  //line-height: sqrt($phi)
 
 /* page container
  * ---------------- */
 #page
   +zero-margin
   padding: 0 ($px9/3*10)
+  
+  .container
+  +container
+  +susy-grid-background
   
 a img
   border: none
@@ -74,10 +77,10 @@ a.button
   display: block
   text-align: center
   width: $px9*8
-  background: $main-color
+  background: $ruby
   font-size: 127.2%
   padding: $px9 ($px9*2)
   color: silver
   &:hover
-    text-decoration: none
     color: black
+    border: none

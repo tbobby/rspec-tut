@@ -5,14 +5,23 @@
 @import vars
 
 // ---------------------------------------------------------------------------
-// Basic Grid
+// Basic grid settings
 
-$total-columns: 10
-$column-width: 1.6em
+$total-columns: 9
+$column-width: 2em
 $gutter-width: 1em
 $grid-padding: $gutter-width
+
+$break: 40em 10 lt-ie9
 
 $show-grid-backgrounds: true
 $container-style: fluid
 
-$grid-background-column-color: lighten($susy-background, 3%)
+// ---------------------------------------------------------------------------
+// Other settings
+
+@import colors
+@import size
+@import type
+
+$grid-background-column-color: lighten($susy-background, 18%)

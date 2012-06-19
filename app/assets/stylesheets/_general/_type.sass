@@ -1,0 +1,83 @@
+@import compass/css3/transition
+@import compass/css3/opacity
+
+// ---------------------------------------------------------------------------
+// Basic Typography
+
+%type
+  +serif
+  
+  // ---------------------------------------------------------------------------
+  // Headings
+  h2
+    @extend .caps
+    +adjust-font-size-em($largeem)
+    +trailing-border(3px, .125, $largeem) // WARNING: do not use px value
+    +trailer(.875, $largeem)
+    border-color: $base2
+    font-weight: bold
+    ~ h2
+      +leader(2, $largeem)
+  
+  h3
+    +adjust-font-size-em($largeem)
+    +leader(1, $largeem)
+    +trailer(1, $largeem)
+    font-weight: bold
+    + h4
+      +leader(0)
+    +at-breakpoint($break)
+      +leader(2, $largeem)
+  
+  h4
+    @extend .caps
+    +leader(2)
+  
+  h5
+    font-style: italic
+  
+  
+  @for $i from 1 through 6
+    h#{$i}
+      a
+        #{$link}
+          position: relative
+          display: inline-block
+          
+          .icon-bookmark
+            +transition(all 300ms)
+            +opacity(0)
+            position: absolute
+            display: block
+            right: 100%
+            top: 0
+            margin-right: $xxxsmallem
+            line-height: inherit
+          
+        #{$focus}
+          &::before
+            +opacity(1)
+  
+  @for $i from 1 through 3
+    h#{$i}
+      a
+        #{$link}
+          color: $susy-bodycopy-dark-20
+          
+  @for $i from 4 through 6
+    h#{$i}
+      a
+        #{$link}
+          color: $susy-highlight-dark-20
+          &::before
+            +opacity(.75)
+        
+        #{$focus}
+          &::before
+            +opacity(1)
+            
+  // ---------------------------------------------------------------------------
+  // Block
+  
+  // ---------------------------------------------------------------------------
+  // Inline
