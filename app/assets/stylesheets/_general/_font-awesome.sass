@@ -23,9 +23,15 @@
 
 @import compass/css3/font-face
 
-$fontAwesomePath: "../../fonts/fontawesome-webfont" !default
+//$fontAwesomePath: "../../fonts/fontawesome-webfont" !default
+$fontAwesomeEotPath: font-path("fontawesome-webfont.eot")
+$fontAwesomeWoffPath: font-path("fontawesome-webfont.woff")
+$fontAwesomeTtfPath: font-path("fontawesome-webfont.ttf")
+$fontAwesomeSvgzPath: font-path("fontawesome-webfont.svgz")
+$fontAwesomeSvgPath: font-path("fontawesome-webfont.svg#FontAwesomeRegular")
 
-+font-face("FontAwesome", font-files("#{$fontAwesomePath}.woff", woff,     "#{$fontAwesomePath}.ttf", truetype, "#{$fontAwesomePath}.svg#FontAwesomeRegular", svg), "#{$fontAwesomePath}.eot", normal, normal)
+//+font-face("FontAwesome", font-files("#{$fontAwesomePath}.woff", woff,     "#{$fontAwesomePath}.ttf", truetype, "#{$fontAwesomePath}.svg#FontAwesomeRegular", svg), "#{$fontAwesomePath}.eot", normal, normal)
++font-face("FontAwesome", font-files($fontAwesomeWoffPath, woff,     $fontAwesomeTtfPath, truetype, $fontAwesomeSvgPath, svg), $fontAwesomeEotPath, normal, normal)
 
 /*  Font Awesome styles
  *  -------------------------------------------------------

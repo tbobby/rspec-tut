@@ -5,7 +5,7 @@
 // Basic Typography
 
 %type
-  +serif
+  +sans
   
   // ---------------------------------------------------------------------------
   // Headings
@@ -57,6 +57,10 @@
         #{$focus}
           &::before
             +opacity(1)
+        
+        &:hover
+          border: none
+          padding: none
   
   @for $i from 1 through 3
     h#{$i}
@@ -79,5 +83,25 @@
   // ---------------------------------------------------------------------------
   // Block
   
+  ul, ol, p
+    +trailer
+  li
+    +trailer(.5)
+  ul
+    list-style: circle
+  ol
+    list-style: decimal
+  
   // ---------------------------------------------------------------------------
   // Inline
+  
+  strong, code
+    font-weight: bold
+    color: $susy-bodycopy-dark-5
+  
+  em
+    font-style: italic
+  
+  a[href^="http"]
+    .icon-external-link:after
+      font-size: $smallem
