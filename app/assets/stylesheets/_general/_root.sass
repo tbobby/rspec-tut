@@ -31,7 +31,7 @@ html, body
   
   // alistapart.com/articles/howtosizetextincss/
   +adjust-font-size-pct(100%)
-  +adjust-line-height($medem)
+  +adjust-line-height($norm)
   
   color: $susy-bodycopy
   background: $susy-background-light-20
@@ -52,9 +52,10 @@ a
   #{$focus}
     color: $accent
   
-  &:hover
+  // TODO: place this explicitly in [role="main"] paragraph
+  /*&:hover
     border-bottom: 1px solid $accent
-    padding-bottom: $picoem
+    padding-bottom: $picoem*/
     
 //-----------------------------------------------------------------------------
 // Simple Pages

@@ -13,7 +13,7 @@ To achieve responsive layout based on media (device), consider these:
 
 ### PL02. Stylesheets
 
-* [ ] SS1. Prepare a basic colletion of reusable stylesheets that deals with
+* [ ] SS1. Prepare a basic collection of reusable stylesheets that deals with
 sizes, types, fonts, colors, and grid settings.
 
 ### PL03. Typography
@@ -39,3 +39,8 @@ sizes, types, fonts, colors, and grid settings.
 * [v] TC1. Page title autotest
 
 * [ ] TC2. Page links autotest
+
+### TD02. UI Layout
+
+* UL01. Quirks and unexpected layout problems
+  * [ ] UL01-1 h2.a:hover should have icon align with top of heading.

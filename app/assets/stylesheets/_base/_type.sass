@@ -16,8 +16,12 @@ $round-to-nearest-half-line: true
 = adjust-font-size-em($em: 1em)
   font-size: $em
   
-= adjust-line-height($em: 1em)
-  line-height: $em
+= adjust-line-height($factor: 1)
+  line-height: $factor
+  
+= adjust-font-em($size: 1em, $line: 1)
+  +adjust-font-size-em($size)
+  +adjust-line-height($line)
   
 = adjust-font-size-pct($pct: 100%)
   font-size: $pct

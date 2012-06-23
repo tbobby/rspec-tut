@@ -5,19 +5,26 @@
 // Basic Typography
 
 %type
-  +sans
+  +serif
   
   // ---------------------------------------------------------------------------
   // Headings
   h2
     @extend .caps
     +adjust-font-size-em($largeem)
-    +trailing-border(3px, .125, $largeem) // WARNING: do not use px value
+    +trailing-border($xmicropx, .125, $largeem)
     +trailer(.875, $largeem)
     border-color: $base2
     font-weight: bold
     ~ h2
       +leader(2, $largeem)
+      
+    +at-breakpoint($break)
+      +adjust-font-size-em($xlargeem)
+      +trailing-border($xmicropx, .125, $xlargeem)
+      +trailer(.875, $xlargeem)
+      ~ h2
+        +leader(2, $xlargeem)
   
   h3
     +adjust-font-size-em($largeem)
@@ -44,23 +51,19 @@
           position: relative
           display: inline-block
           
-          .icon-bookmark
+          +font-icon($icon-bookmark, before, $microem)
             +transition(all 300ms)
             +opacity(0)
             position: absolute
             display: block
+            text-decoration: inherit
             right: 100%
             top: 0
-            margin-right: $xxxsmallem
             line-height: inherit
           
         #{$focus}
           &::before
             +opacity(1)
-        
-        &:hover
-          border: none
-          padding: none
   
   @for $i from 1 through 3
     h#{$i}
@@ -103,5 +106,5 @@
     font-style: italic
   
   a[href^="http"]
-    .icon-external-link:after
+    +font-icon($icon-external-link, after)
       font-size: $smallem
