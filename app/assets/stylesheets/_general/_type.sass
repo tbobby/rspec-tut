@@ -51,7 +51,8 @@
           position: relative
           display: inline-block
           
-          +font-icon($icon-bookmark, before, $microem)
+          // BUG: icon not top-aligned with text heading
+          /*+font-icon($icon-home, before, $microem)
             +transition(all 300ms)
             +opacity(0)
             position: absolute
@@ -59,7 +60,7 @@
             text-decoration: inherit
             right: 100%
             top: 0
-            line-height: inherit
+            line-height: inherit*/
           
         #{$focus}
           &::before
